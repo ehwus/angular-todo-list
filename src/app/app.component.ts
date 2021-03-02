@@ -7,7 +7,7 @@ import { TodoItem } from './shared/todoitem.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  todoList: TodoItem[] = [new TodoItem('Foo'), new TodoItem('Bar')];
+  todoList: TodoItem[] = [];
 
   onTaskCreated(taskText: string) {
     this.todoList.push(new TodoItem(taskText));

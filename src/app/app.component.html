@@ -5,6 +5,7 @@
     [todoList]="todoList"
     (deleteItemRequest)="onTaskDeleted($event)"
   ></app-todo-list>
+  <p *ngIf="todoList.length === 0">No tasks to display yet!</p>
   <hr />
   <app-new-item (taskCreated)="onTaskCreated($event)"></app-new-item>
 </div>
