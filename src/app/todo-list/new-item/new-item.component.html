@@ -1,0 +1,12 @@
+<form>
+  <div class="row">
+    <label for="new-task">New Task</label>
+    <input
+      type="text"
+      class="form-control"
+      name="new-task"
+      [(ngModel)]="newTask"
+    />
+    <button class="btn btn-primary" (click)="onNewTaskClick()">Submit</button>
+  </div>
+</form>
