@@ -3,5 +3,5 @@
   <hr />
   <app-todo-list [todoList]="todoList"></app-todo-list>
   <hr />
-  <app-new-item></app-new-item>
+  <app-new-item (taskCreated)="onTaskCreated($event)"></app-new-item>
 </div>

@@ -8,4 +8,8 @@ import { TodoItem } from './shared/todoitem.model';
 })
 export class AppComponent {
   todoList: TodoItem[] = [new TodoItem('Foo'), new TodoItem('Bar')];
+
+  onTaskCreated(event: string) {
+    this.todoList.push(new TodoItem(event));
+  }
 }
