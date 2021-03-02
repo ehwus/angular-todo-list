@@ -9,7 +9,12 @@ import { TodoItem } from './shared/todoitem.model';
 export class AppComponent {
   todoList: TodoItem[] = [new TodoItem('Foo'), new TodoItem('Bar')];
 
-  onTaskCreated(event: string) {
-    this.todoList.push(new TodoItem(event));
+  onTaskCreated(taskText: string) {
+    this.todoList.push(new TodoItem(taskText));
+  }
+
+  onTaskDeleted(idToDelete: Number) {
+    let index = this.todoList.findIndex((e) => e.id === idToDelete);
+    this.todoList.splice(index, 1);
   }
 }

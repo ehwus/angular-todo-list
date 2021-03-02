@@ -1,6 +1,12 @@
 <div class="row">
   <p>{{ item.task }}</p>
   <span class="pull-right">
-    <button class="btn btn-danger btn-sm ml-5">X</button>
+    <button
+      class="btn btn-danger btn-sm ml-5"
+      (click)="onClickDelete()"
+      [id]="item.id"
+    >
+      X
+    </button>
   </span>
 </div>

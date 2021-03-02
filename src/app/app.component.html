@@ -1,7 +1,10 @@
 <div class="container">
   <h1>Todo List</h1>
   <hr />
-  <app-todo-list [todoList]="todoList"></app-todo-list>
+  <app-todo-list
+    [todoList]="todoList"
+    (deleteItemRequest)="onTaskDeleted($event)"
+  ></app-todo-list>
   <hr />
   <app-new-item (taskCreated)="onTaskCreated($event)"></app-new-item>
 </div>
