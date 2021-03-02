@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'todo-list'`, () => {
+  it(`should start with an empty todo-list`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('todo-list');
+    expect(app.todoList).toEqual([]);
   });
 
   it('should render title', () => {
