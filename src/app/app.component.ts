@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoItem } from './shared/todoItem.model';
+import { TodoItem } from './shared/todoitem.model';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,5 @@ import { TodoItem } from './shared/todoItem.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  todoList: TodoItem[] = [];
+  todoList: TodoItem[] = [new TodoItem('Foo'), new TodoItem('Bar')];
 }
