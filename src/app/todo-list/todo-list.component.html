@@ -1,3 +1,4 @@
+<p *ngIf="todoList.length === 0">No items yet!</p>
 <app-todo
   *ngFor="let item of todoList"
   [item]="item"

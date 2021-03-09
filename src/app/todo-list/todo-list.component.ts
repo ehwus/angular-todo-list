@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../shared/todoitem.model';
+import { TodoListService } from './todo-list.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,14 +8,18 @@ import { TodoItem } from '../shared/todoitem.model';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-  @Input() todoList!: TodoItem[];
-  @Output() deleteItemRequest = new EventEmitter<Number>();
+  todoList: TodoItem[] = [];
+  constructor(private todoListService: TodoListService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.todoList = this.todoListService.getTodoList();
 
-  ngOnInit(): void {}
+    this.todoListService.listChanged.subscribe(
+      (updatedList) => (this.todoList = updatedList)
+    );
+  }
 
-  deleteRequestToApp(id: Number) {
-    this.deleteItemRequest.emit(id);
+  deleteRequestToApp(id: number) {
+    this.todoListService.deleteItem(id);
   }
 }

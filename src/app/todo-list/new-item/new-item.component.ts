@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TodoListService } from '../todo-list.service';
 
 @Component({
   selector: 'app-new-item',
@@ -6,15 +7,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./new-item.component.css'],
 })
 export class NewItemComponent implements OnInit {
-  @Output() taskCreated = new EventEmitter<string>();
-
   newTask = '';
-  constructor() {}
+  constructor(private todoListService: TodoListService) {}
 
   ngOnInit(): void {}
 
   onNewTaskClick() {
-    this.taskCreated.emit(this.newTask);
+    this.todoListService.addItem(this.newTask);
     this.newTask = '';
   }
 }

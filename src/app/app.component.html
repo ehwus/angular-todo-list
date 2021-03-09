@@ -1,11 +1,7 @@
 <div class="container">
   <h1>Todo List</h1>
   <hr />
-  <app-todo-list
-    [todoList]="todoList"
-    (deleteItemRequest)="onTaskDeleted($event)"
-  ></app-todo-list>
-  <p *ngIf="todoList.length === 0">No tasks to display yet!</p>
+  <app-todo-list></app-todo-list>
   <hr />
-  <app-new-item (taskCreated)="onTaskCreated($event)"></app-new-item>
+  <app-new-item></app-new-item>
 </div>
